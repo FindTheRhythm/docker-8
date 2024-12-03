@@ -1,0 +1,7 @@
+services:
+  maven:
+    build: .
+    container_name: maven_container
+    volumes:
+      - .:/app
+    command: ["mvn", "clean", "install"]
