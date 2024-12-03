@@ -8,4 +8,3 @@ FROM jenkins/jenkins:lts
 USER root
 RUN mkdir -p /var/jenkins_home && chown -R jenkins:jenkins /var/jenkins_home
 USER jenkins
-RUN jenkins-plugin-cli --plugins "git pipeline docker-workflow"
