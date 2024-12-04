@@ -1,9 +1,0 @@
-version: '3.8'
-
-services:
-  maven:
-    build: .
-    container_name: maven_container
-    volumes:
-      - .:/app
-    command: ["mvn", "clean", "install"]
