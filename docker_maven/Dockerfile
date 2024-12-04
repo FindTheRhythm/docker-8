@@ -1,6 +1,6 @@
 # Используем официальный образ Maven с Java 17
 FROM maven:3.9.1-eclipse-temurin-17 AS builder
-WORKDIR /main
+WORKDIR /java
 COPY pom.xml .
 
 COPY . .
