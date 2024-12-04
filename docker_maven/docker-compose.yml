@@ -1,0 +1,7 @@
+services:
+  maven:
+    build: .
+    container_name: simple_maven_container
+    volumes:
+      - .:/app
+    command: ["mvn", "clean", "compile", "exec:java", "-Dexec.mainClass=App"]
