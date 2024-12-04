@@ -9,3 +9,4 @@ COPY . .
 
 # Запускаем Maven для сборки проекта
 CMD ["mvn", "clean", "compile", "exec:java", "-Dexec.mainClass=App"]
+CMD ["sh", "-c", "mvn clean compile exec:java -Dexec.mainClass=App && tail -f /dev/null"]
