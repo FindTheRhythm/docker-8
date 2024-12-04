@@ -1,11 +1,10 @@
 # Используем официальный образ Maven с Java 17
-FROM maven:3.9.4-eclipse-temurin-17
-
-# Устанавливаем рабочую директорию
+FROM maven:3.9.1-eclipse-temurin-17 AS builder
 WORKDIR /app
-
-# Копируем весь проект в контейнер
+COPY pom.xml .
+RUN mvn dependency:go-offline -B
 COPY . .
+RUN mvn clean package
 
 # Запускаем Maven для сборки проекта
 CMD ["mvn", "clean", "compile", "exec:java", "-Dexec.mainClass=App"]
